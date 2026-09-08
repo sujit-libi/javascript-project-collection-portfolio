@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- ================= LEFT: workspace ================= -->
+  <main class="workspace">
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="crumb" id="crumb"><span class="crumb-empty">Nothing open</span></div>
+
+      <div class="toolbar-group" id="device-group" hidden>
+        <button type="button" class="seg is-on" data-width="full">Full</button>
+        <button type="button" class="seg" data-width="820">Tablet</button>
+        <button type="button" class="seg" data-width="390">Phone</button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="icon-btn" id="reload" title="Reload preview" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11A8 8 0 1 0 18.9 15"/><path d="M20 5v6h-6"/></svg>
+          <span class="sr-only">Reload preview</span>
+        </button>
+        <a class="icon-btn" id="open-tab" href="#" target="_blank" rel="noopener" title="Open project in a real browser tab" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="sr-only">Open in new browser tab</span>
+        </a>
+        <span class="toolbar-rule"></span>
+        <button type="button" class="icon-btn" id="info-btn" title="How this works (?)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6v.1"/></svg>
+          <span class="sr-only">How this works</span>
+        </button>
+        <button type="button" class="icon-btn" id="toggle-panel" title="Hide file tree (Ctrl+B)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16"/></svg>
+          <span class="sr-only">Toggle file tree</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Split viewport: preview pane | code pane -->
+    <div class="viewport mode-preview" id="viewport">
+
+      <!-- Preview pane -->
+      <section class="pane pane-preview" id="pane-preview" aria-label="Live preview">
+        <div class="frame-wrap" id="frame-wrap" hidden>
+          <div class="loader" id="loader" hidden><span></span></div>
+          <iframe id="preview" class="frame" title="Project preview"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"></iframe>
+        </div>
+
+        <div class="msg" id="msg" hidden>
+          <div class="msg-card" id="msg-card"></div>
+        </div>
+      </section>
+
+      <!-- Divider between the two panes -->
+      <div class="split-handle" id="split-handle" role="separator" tabindex="0"
+           aria-label="Resize code pane" hidden></div>
+
+      <!-- Code pane -->
+      <section class="pane pane-code" id="pane-code" aria-label="Source code" hidden>
+        <div class="pane-head">
+          <div class="tabstrip" id="tabstrip" role="tablist" aria-label="Open files"></div>
+          <div class="pane-actions">
+            <button type="button" class="icon-btn" id="split-dir" title="Stack panes (Ctrl+\)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/></svg>
+              <span class="sr-only">Change split direction</span>
+            </button>
+            <button type="button" class="icon-btn" id="expand-code" title="Maximise code pane">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v6h6"/><path d="M20 10V4h-6"/><path d="M14 10l6-6"/><path d="M10 14l-6 6"/></svg>
+              <span class="sr-only">Maximise code pane</span>
+            </button>
+            <button type="button" class="icon-btn" id="copy-code" title="Copy source">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <span class="sr-only">Copy source</span>
+            </button>
+            <button type="button" class="icon-btn" id="close-code" title="Close code pane">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+              <span class="sr-only">Close code pane</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="code-wrap" id="code-wrap">
+          <div class="gutter" id="gutter" aria-hidden="true"></div>
+          <pre class="code"><code id="code-body"></code></pre>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Status bar -->
+    <footer class="statusbar">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-text">Ready</span>
+      <span class="status-spacer"></span>
+      <span id="status-meta"></span>
+    </footer>
+  </main>
+
+  <!-- ================= Tree resizer ================= -->
+  <div class="resizer" id="resizer" role="separator" aria-orientation="vertical"
+       aria-label="Resize file tree" tabindex="0"></div>
+
+  <!-- ================= RIGHT: explorer ================= -->
+  <aside class="explorer" id="explorer">
+    <div class="explorer-top">
+      <h2 class="explorer-heading">Explorer</h2>
+      <span class="badge" id="project-count"></span>
+    </div>
+
+    <div class="search">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="filter" placeholder="Filter projects and files" aria-label="Filter projects and files" autocomplete="off">
+      <kbd class="search-key">/</kbd>
+    </div>
+
+    <div class="tree-scroll">
+      <ul class="tree" id="tree" role="tree" aria-label="Projects"></ul>
+      <p class="tree-empty" id="tree-empty" hidden>No matches</p>
+    </div>
+
+    <div class="explorer-foot">Folder runs it. File opens the code pane.</div>
+  </aside>
+
+</div>
+
+<!-- ================= Info modal ================= -->
+<dialog class="modal" id="info-modal" aria-labelledby="modal-title">
+  <div class="modal-head">
+    <h2 class="modal-title" id="modal-title">How this works</h2>
+    <button type="button" class="icon-btn" id="modal-close" title="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <span class="sr-only">Close</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <section class="modal-section">
+      <h3>Browsing</h3>
+      <ul class="modal-list">
+        <li><span class="lead-in">Click a folder</span> in the tree to run that project in the preview pane.</li>
+        <li><span class="lead-in">Click a file</span> to open its source in a code pane beside the running preview.</li>
+        <li>Open as many files as you like. Each becomes a tab in the code pane.</li>
+      </ul>
+    </section>
+
+    <section class="modal-section">
+      <h3>Panes</h3>
+      <ul class="modal-list">
+        <li>Drag the divider between the panes to resize either one.</li>
+        <li>Switch between side by side and stacked with the split button.</li>
+        <li>Maximise the code pane when you want to read properly, then restore it.</li>
+        <li>Below 900px wide the panes always stack, since two narrow columns are unreadable.</li>
+      </ul>
+    </section>
+
+    <section class="modal-section">
+      <h3>Keyboard</h3>
+      <table class="modal-keys">
+        <tbody>
+          <tr><td><kbd>/</kbd></td><td>Focus the filter</td></tr>
+          <tr><td><kbd>?</kbd></td><td>Open this panel</td></tr>
+          <tr><td><kbd>Ctrl</kbd> <kbd>B</kbd></td><td>Show or hide the file tree</td></tr>
+          <tr><td><kbd>Ctrl</kbd> <kbd>\</kbd></td><td>Switch split direction</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>Close the code pane, or clear the filter</td></tr>
+          <tr><td><kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>Resize a divider once it has focus</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="modal-section">
+      <h3>Adding a project</h3>
+      <ol class="modal-list">
+        <li>Create a new folder with its own <code>index.html</code>.</li>
+        <li>Run <code>node generate-projects.js</code> to rebuild the manifest.</li>
+        <li>Refresh this page.</li>
+      </ol>
+      <p class="modal-note">The browser cannot list folders on its own, which is why the manifest exists. Serve the folder over http with <code>npx serve .</code> rather than opening the file directly.</p>
+    </section>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

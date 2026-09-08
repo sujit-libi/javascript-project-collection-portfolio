@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Quote Generator",
+      "path": "quote-generator",
+      "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "QR Generator",
+      "path": "qr-generator",
+      "files": ["index.html"]
+    }
+  ]
