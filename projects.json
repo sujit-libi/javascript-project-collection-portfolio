@@ -18,5 +18,10 @@
       "name": "Joke Teller",
       "path": "joke-teller",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Toggle Light and Dark Mode",
+      "path": "toggle-light-and-dark-mode",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
