@@ -40,6 +40,11 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 
+/* The hidden attribute comes from the browser's own stylesheet, which any
+   author rule outranks. Several elements here set display in a class rule,
+   so hidden needs to be restated to actually win. */
+[hidden] { display: none !important; }
+
 body {
   background: var(--bg);
   color: var(--text);
