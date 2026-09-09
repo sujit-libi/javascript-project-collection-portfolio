@@ -5,8 +5,8 @@
       "files": ["index.html", "style.css", "script.js"]
     },
     {
-      "name": "QR Generator",
-      "path": "qr-generator",
-      "files": ["index.html"]
+      "name": "Infinite Scroll",
+      "path": "infinity-scroll",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
