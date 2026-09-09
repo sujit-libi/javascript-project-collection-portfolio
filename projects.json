@@ -13,5 +13,10 @@
       "name": "Picture in Picture",
       "path": "picture-in-picture",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Joke Teller",
+      "path": "joke-teller",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
