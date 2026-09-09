@@ -8,5 +8,10 @@
       "name": "Infinite Scroll",
       "path": "infinity-scroll",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Picture in Picture",
+      "path": "picture-in-picture",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
