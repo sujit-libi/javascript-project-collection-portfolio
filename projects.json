@@ -28,5 +28,10 @@
       "name": "Animated Template",
       "path": "animated-template",
       "files": ["index.html", "style.css", "script.js", "nav.js"]
+    },
+    {
+      "name": "Navigation Nation",
+      "path": "navigation-nation",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
