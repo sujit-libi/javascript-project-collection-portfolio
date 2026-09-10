@@ -7,7 +7,7 @@
     {
       "name": "Infinite Scroll",
       "path": "infinity-scroll",
-      "files": ["index.html", "style.css", "script.js"]
+      "files": ["index.html", "style.css", "script.js", "loader.svg"]
     },
     {
       "name": "Picture in Picture",
@@ -17,11 +17,16 @@
     {
       "name": "Joke Teller",
       "path": "joke-teller",
-      "files": ["index.html", "style.css", "script.js"]
+      "files": ["index.html", "style.css", "script.js", "luffy.gif", "voicerss-sdk.js"]
     },
     {
       "name": "Toggle Light and Dark Mode",
       "path": "toggle-light-and-dark-mode",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Animated Template",
+      "path": "animated-template",
+      "files": ["index.html", "style.css", "script.js", "nav.js"]
     }
   ]
