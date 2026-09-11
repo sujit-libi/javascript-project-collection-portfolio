@@ -38,5 +38,10 @@
       "name": "Music Player",
       "path": "music-player",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Custom Countdown",
+      "path": "custom-countdown",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
