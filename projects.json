@@ -47,11 +47,16 @@
     {
       "name": "Book Keeper",
       "path": "book-keeper",
-      "files": ["index.html", "style.css", "script.js"]
+      "files": ["index.html", "style.css", "script.js", "script2.js"]
     },
     {
       "name": "Video Player",
       "path": "video-player",
+      "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Form Validation",
+      "path": "form-validator",
       "files": ["index.html", "style.css", "script.js"]
     }
   ]
