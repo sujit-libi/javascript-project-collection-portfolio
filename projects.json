@@ -48,5 +48,10 @@
       "name": "Book Keeper",
       "path": "book-keeper",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Video Player",
+      "path": "video-player",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
