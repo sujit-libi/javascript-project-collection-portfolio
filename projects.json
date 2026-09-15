@@ -1,67 +1,78 @@
 [
-    {
-      "name": "Quote Generator",
-      "path": "quote-generator",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Infinite Scroll",
-      "path": "infinity-scroll",
-      "files": ["index.html", "style.css", "script.js", "loader.svg"]
-    },
-    {
-      "name": "Picture in Picture",
-      "path": "picture-in-picture",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Joke Teller",
-      "path": "joke-teller",
-      "files": ["index.html", "style.css", "script.js", "luffy.gif", "voicerss-sdk.js"]
-    },
-    {
-      "name": "Toggle Light and Dark Mode",
-      "path": "toggle-light-and-dark-mode",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Animated Template",
-      "path": "animated-template",
-      "files": ["index.html", "style.css", "script.js", "nav.js"]
-    },
-    {
-      "name": "Navigation Nation",
-      "path": "navigation-nation",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Music Player",
-      "path": "music-player",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Custom Countdown",
-      "path": "custom-countdown",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Book Keeper",
-      "path": "book-keeper",
-      "files": ["index.html", "style.css", "script.js", "script2.js"]
-    },
-    {
-      "name": "Video Player",
-      "path": "video-player",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Form Validation",
-      "path": "form-validator",
-      "files": ["index.html", "style.css", "script.js"]
-    },
-    {
-      "name": "Spook Rock",
-      "path": "rock-paper-scissor",
-      "files": ["index.html", "style.css", "script.js"]
-    }
-  ]
+  {
+    "name": "Quote Generator",
+    "path": "quote-generator",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Infinite Scroll",
+    "path": "infinity-scroll",
+    "files": ["index.html", "style.css", "script.js", "loader.svg"]
+  },
+  {
+    "name": "Picture in Picture",
+    "path": "picture-in-picture",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Joke Teller",
+    "path": "joke-teller",
+    "files": [
+      "index.html",
+      "style.css",
+      "script.js",
+      "luffy.gif",
+      "voicerss-sdk.js"
+    ]
+  },
+  {
+    "name": "Toggle Light and Dark Mode",
+    "path": "toggle-light-and-dark-mode",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Animated Template",
+    "path": "animated-template",
+    "files": ["index.html", "style.css", "script.js", "nav.js"]
+  },
+  {
+    "name": "Navigation Nation",
+    "path": "navigation-nation",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Music Player",
+    "path": "music-player",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Custom Countdown",
+    "path": "custom-countdown",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Book Keeper",
+    "path": "book-keeper",
+    "files": ["index.html", "style.css", "script.js", "script2.js"]
+  },
+  {
+    "name": "Video Player",
+    "path": "video-player",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Form Validation",
+    "path": "form-validator",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Spook Rock",
+    "path": "rock-paper-scissor",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "NASA APOD",
+    "path": "nasa-apod",
+    "files": ["index.html", "style.css", "script.js"]
+  }
+]
