@@ -58,5 +58,10 @@
       "name": "Form Validation",
       "path": "form-validator",
       "files": ["index.html", "style.css", "script.js"]
+    },
+    {
+      "name": "Spook Rock",
+      "path": "rock-paper-scissor",
+      "files": ["index.html", "style.css", "script.js"]
     }
   ]
