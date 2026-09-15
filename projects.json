@@ -74,5 +74,10 @@
     "name": "NASA APOD",
     "path": "nasa-apod",
     "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Ping Pong",
+    "path": "ping-pong",
+    "files": ["index.html", "style.css", "script.js"]
   }
 ]
