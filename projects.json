@@ -79,5 +79,15 @@
     "name": "Ping Pong",
     "path": "ping-pong",
     "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Math Sprint Game",
+    "path": "math-sprint-game",
+    "files": ["index.html", "style.css", "script.js"]
+  },
+  {
+    "name": "Splash Page",
+    "path": "splash-page",
+    "files": ["index.html", "style.css", "script.js"]
   }
 ]
